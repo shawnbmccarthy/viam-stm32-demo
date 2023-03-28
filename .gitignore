@@ -1,0 +1,35 @@
+# mac
+.DS_Store
+
+# ignore python virtual environments
+venv
+.venv
+
+# python
+__pycache__
+*.pyc
+
+# ignore an files generated in proto generated files
+proto/*.c
+proto/*.h
+proto/*.pb
+proto/*.py
+
+# proto/lib files moved to support basic build
+# will need to create a cleaner build process
+stm32-f303re/Core/Inc/*.pb.h
+stm32-f303re/Core/Inc/*.pb.h
+stm32-f303re/Core/Inc/pb_*.h
+stm32-f303re/Core/Src/*.pb.c
+stm32-f303re/Core/Src/*.pb.c
+stm32-f303re/Core/Src/pb_*.c
+
+# ignore python generated proto files
+stm32-viam-module/*_pb2.py
+
+# build files
+stm32-f303re/Debug
+stm32-f303re/Release
+
+# generic
+*.swp

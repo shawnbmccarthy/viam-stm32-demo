@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+import "motor.proto";
+import "sensor.proto";
+import "error.proto";
+
+message WrappedRequest
+{
+  oneof msg {
+    SensorRequest sensorRequest= 1;
+    MotorRequest motorRequest = 2;
+  }
+}
+
+message WrappedResponse
+{
+  bool status = 1;
+  oneof msg {
+    SensorResponse sensorResponse = 2;
+    MotorResponse motorResponse = 3;
+    ErrorResponse errorResponse = 4;
+  }
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+enum SensorType
+{
+  NoSensor = 0;
+  Temperature = 1;
+  Battery = 2;
+  Counter = 3;
+}
+
+message SensorRequest
+{
+    SensorType sensor = 1;
+}
+
+message SensorResponse
+{
+    float value = 1;
+}

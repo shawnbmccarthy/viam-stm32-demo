@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+/*
+ * a simple sensor example
+ */
+
+enum Action 
+{
+  NoAction = 0;
+  SetPower = 1;
+  GoFor = 2;
+  GoTo = 3;
+  resetZeroPosition = 4;
+  getPosition = 5;
+  Stop = 6;
+  IsPowered = 7;
+  IsMoving = 8;
+}
+
+message MotorRequest
+{
+    Action action = 1;
+    optional float power = 2;
+    optional float rpm = 3;
+    optional float revolutions = 4;
+    optional float offset = 5;
+}
+
+message MotorResponse
+{
+    Action action = 1;
+    optional bool val_b = 2;
+    optional float val_f = 3;
+}
